@@ -29,7 +29,11 @@ export default function Book({ data, handleModalOpen, setactiveCard }: props) {
           sx={{ paddingTop: "15px" }}
           component="img"
           height="50%"
-          image={info.imageLinks.thumbnail}
+          image={
+            info.imageLinks?.thumbnail === undefined
+              ? "https://toppng.com/uploads/preview/small-book-cover-template-11550246173rolkzaboiy.png"
+              : info.imageLinks.thumbnail
+          }
           alt="green iguana"
         />
         <CardContent>

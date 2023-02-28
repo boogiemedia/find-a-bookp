@@ -1,26 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
-import OutlinedInput from "@mui/material/OutlinedInput";
-import InputAdornment from "@mui/material/InputAdornment";
+import Button from "@mui/material/Button";
+
 //..................End of imports.........................................
 interface props {
   data: any;
   filtredBooks: any;
   handleFilter: any;
+  categories: any;
 }
 //........................end of props...............................
 
-export default function ToolBar({ data, filtredBooks, handleFilter }: props) {
-  const [category, setCategory] = React.useState("");
+export default function ToolBar({
+  data,
+  filtredBooks,
+  handleFilter,
+  categories,
+}: props) {
+  const [category, setCategory] = useState<any>([]);
   const handleChange = (event: { target: { value: string } }) => {
     setCategory(event.target.value);
+    filtredBooks(event.target.value);
   };
-
+  console.log(category, "check");
   //...................................End of constants..................................
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "label + &": {
@@ -35,6 +42,7 @@ export default function ToolBar({ data, filtredBooks, handleFilter }: props) {
       padding: "10px 26px 10px 12px",
     },
   }));
+
   //.......................End of styling MUI.........................
 
   return (
@@ -43,26 +51,6 @@ export default function ToolBar({ data, filtredBooks, handleFilter }: props) {
         backgroundColor: "white",
       }}
     >
-      <Typography noWrap component="div">
-        From price
-      </Typography>
-      <FormControl sx={{ m: 1, width: "10ch" }} variant="outlined">
-        <OutlinedInput
-          id="outlined-adornment-price"
-          endAdornment={<InputAdornment position="end">$</InputAdornment>}
-          aria-describedby="outlined-weight-helper-text"
-        />
-      </FormControl>
-      <Typography noWrap component="div">
-        To price
-      </Typography>
-      <FormControl sx={{ m: 1, width: "10ch" }} variant="outlined">
-        <OutlinedInput
-          id="outlined-adornment-price"
-          endAdornment={<InputAdornment position="end">$</InputAdornment>}
-          aria-describedby="outlined-weight-helper-text"
-        />
-      </FormControl>
       <Typography noWrap component="div" sx={{ marginLeft: "20px" }}>
         Category
       </Typography>
@@ -73,12 +61,25 @@ export default function ToolBar({ data, filtredBooks, handleFilter }: props) {
           onChange={handleChange}
           input={<BootstrapInput />}
         >
-          <option aria-label="None" value="" />
-          <option value={10}>Ten</option>
-          <option value={20}>Twenty</option>
-          <option value={30}>Thirty</option>
+          <option aria-label="None" value="N/A">
+            N/A
+          </option>
+          {categories.map((val: any) => (
+            <option value={val}>{val}</option>
+          ))}
         </NativeSelect>
       </FormControl>
+      <Button
+        sx={{ marginRight: "20px" }}
+        variant="contained"
+        size="medium"
+        onClick={handleFilter}
+      >
+        filter
+      </Button>
+      <Button variant="contained" size="medium">
+        reset
+      </Button>
     </Toolbar>
   );
 }

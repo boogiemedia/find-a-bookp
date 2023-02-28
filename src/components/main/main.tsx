@@ -9,6 +9,7 @@ interface props {
   handleFilter: any;
   handleModalOpen: any;
   setactiveCard: any;
+  categories: any;
 }
 //.....................End of props..........................................
 
@@ -18,14 +19,16 @@ export default function Main({
   handleFilter,
   handleModalOpen,
   setactiveCard,
+
+  categories,
 }: props) {
-  const [categories, setCategories] = React.useState<any>([]);
   return (
     <>
       <ToolBar
         data={bookList}
         filtredBooks={filtredList}
         handleFilter={handleFilter}
+        categories={categories}
       />
       <BookList
         books={bookList}

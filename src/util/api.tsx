@@ -4,5 +4,9 @@ export default function api(data: string) {
     {
       method: "get",
     }
-  ).then((res) => res.json());
+  )
+    .then((res) => res.json())
+    .catch((err) => {
+      console.log("API  CALL ( GET ) ERROR : \n", err);
+    });
 }

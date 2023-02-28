@@ -1,0 +1,76 @@
+{
+    "kind": "books#volume",
+    "id": "p_lGX4BtW4cC",
+    "etag": "ostJsVEB/L0",
+    "selfLink": "https://www.googleapis.com/books/v1/volumes/p_lGX4BtW4cC",
+    "volumeInfo": {
+        "title": "The Book of Daniel",
+        "subtitle": "The Commentary of R. Saadia Gaon : Edition and Translation",
+        "authors": [
+            "Saʻadia ben Joseph",
+            "Joseph Alobaidi"
+        ],
+        "publisher": "Peter Lang",
+        "publishedDate": "2006",
+        "description": "The book of Daniel exerted a strong influence despite its brevity and late composition. Old Jewish commentators read it as the future God planned for Israel. Modern Bible scholars trace the birth of Apocalyptic literature to its chapters. The commentary of Saadia Gaon is the first serious example of rabbinical reading and displays the multidimensional role of the Book of Daniel. In Rabbi Saadia's commentary a new style in commenting the Bible emerges. Philological consideration and historical inquiry replace the story-telling type or midrashic exegesis. The commentary is also a testimony of the vital role the Middle East played in forging today's Judaism.",
+        "industryIdentifiers": [
+            {
+                "type": "ISBN_10",
+                "identifier": "3039108115"
+            },
+            {
+                "type": "ISBN_13",
+                "identifier": "9783039108114"
+            }
+        ],
+        "readingModes": {
+            "text": false,
+            "image": true
+        },
+        "pageCount": 700,
+        "printType": "BOOK",
+        "categories": [
+            "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.3.3.0.preview.1",
+        "panelizationSummary": {
+            "containsEpubBubbles": false,
+            "containsImageBubbles": false
+        },
+        "imageLinks": {
+            "smallThumbnail": "http://books.google.com/books/content?id=p_lGX4BtW4cC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+            "thumbnail": "http://books.google.com/books/content?id=p_lGX4BtW4cC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "iw",
+        "previewLink": "http://books.google.com/books?id=p_lGX4BtW4cC&pg=PA658&dq=book&hl=&as_pt=BOOKS&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=p_lGX4BtW4cC&dq=book&hl=&as_pt=BOOKS&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Book_of_Daniel.html?hl=&id=p_lGX4BtW4cC"
+    },
+    "saleInfo": {
+        "country": "IL",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+    },
+    "accessInfo": {
+        "country": "IL",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+            "isAvailable": false
+        },
+        "pdf": {
+            "isAvailable": true,
+            "acsTokenLink": "http://books.google.com/books/download/The_Book_of_Daniel-sample-pdf.acsm?id=p_lGX4BtW4cC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=p_lGX4BtW4cC&hl=&as_pt=BOOKS&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+    },
+    "searchInfo": {
+        "textSnippet": "It is possible that the expression : Every one who shall be found written in the <b>Book</b> ( Dn 12 : 1 ) bear five meanings ; three are having individual dimension and two are with collective dimension . The three with the individual&nbsp;..."
+    }
+}
