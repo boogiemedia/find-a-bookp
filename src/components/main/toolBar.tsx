@@ -7,12 +7,21 @@ import FormControl from "@mui/material/FormControl";
 import NativeSelect from "@mui/material/NativeSelect";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
+//..................End of imports.........................................
+interface props {
+  data: any;
+  filtredBooks: any;
+  handleFilter: any;
+}
+//........................end of props...............................
 
-export default function ToolBar() {
+export default function ToolBar({ data, filtredBooks, handleFilter }: props) {
   const [category, setCategory] = React.useState("");
   const handleChange = (event: { target: { value: string } }) => {
     setCategory(event.target.value);
   };
+
+  //...................................End of constants..................................
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "label + &": {
       marginTop: theme.spacing(3),
@@ -26,6 +35,8 @@ export default function ToolBar() {
       padding: "10px 26px 10px 12px",
     },
   }));
+  //.......................End of styling MUI.........................
+
   return (
     <Toolbar
       sx={{

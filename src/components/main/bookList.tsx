@@ -1,11 +1,18 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Book from "./book";
+//.............. End of imports....................................
 interface props {
   books: any;
+  handleModalOpen: any;
+  setactiveCard: any;
 }
-export default function BookList({ books }: props) {
-  console.log(books);
+//................................End of props.............................
+export default function BookList({
+  books,
+  handleModalOpen,
+  setactiveCard,
+}: props) {
   return (
     <Box
       sx={{
@@ -16,7 +23,13 @@ export default function BookList({ books }: props) {
       }}
     >
       {books.map((item: any) => {
-        return <Book data={item} />;
+        return (
+          <Book
+            data={item}
+            handleModalOpen={handleModalOpen}
+            setactiveCard={setactiveCard}
+          />
+        );
       })}
     </Box>
   );

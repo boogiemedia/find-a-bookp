@@ -1,32 +1,43 @@
-import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
+//................End of imports..................................
 interface props {
   data: any;
+  handleModalOpen: any;
+  setactiveCard: any;
 }
-export default function Book({ data }: props) {
+//...................End of props............................................
+export default function Book({ data, handleModalOpen, setactiveCard }: props) {
+  const info = data.volumeInfo;
+  function cardClick() {
+    handleModalOpen();
+    setactiveCard(data);
+  }
   return (
     <Card
-      sx={{ minWidth: "340px", maxWidth: "340px", margin: "0px 20px 20px 0px" }}
+      sx={{
+        width: "15vw",
+        margin: "0px 20px 20px 0px",
+        height: "30vw",
+      }}
     >
-      <CardActionArea>
+      <CardActionArea onClick={cardClick}>
         <CardMedia
           sx={{ paddingTop: "15px" }}
           component="img"
-          height="355"
-          image="https://www.steimatzky.co.il/pub/media/catalog/product/cache/054fd023ed4beb824f3143faa6fcc008/0/2/026640415-1635799743535883.jpg"
+          height="50%"
+          image={info.imageLinks.thumbnail}
           alt="green iguana"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            Lizard
+            {info.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Lizards are a widespre ad group of squamate reptiles, with over
-            6,000 species, ranging across all continents except Antarctica
+            {info.authors}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -6,11 +6,13 @@ import Typography from "@mui/material/Typography";
 import InputBase from "@mui/material/InputBase";
 import SearchIcon from "@mui/icons-material/Search";
 import LoadingButton from "@mui/lab/LoadingButton";
-
+//...........End of imports...................................................
 interface props {
   text: any;
   handleApi: any;
 }
+//..................End of  props...............................................
+
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -52,13 +54,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
   },
 }));
+//..................................................End of styling MUI..........................
 
 export default function Header({ text, handleApi }: props) {
-  const [loading, setLoading] = React.useState(true);
   const handleClick = () => {
     handleApi();
-    setLoading(false);
   };
+  //...........................End of functions.............................................
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -82,7 +85,6 @@ export default function Header({ text, handleApi }: props) {
           <LoadingButton
             size="large"
             onClick={handleClick}
-            loading={!loading}
             loadingPosition="end"
             variant="contained"
           >
