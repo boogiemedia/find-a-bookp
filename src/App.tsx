@@ -4,12 +4,24 @@ import Main from "./components/main/main";
 import InfoModal from "./components/main/infoModal";
 import api from "./util/api";
 //................end of imports.....................................
+export interface Book {
+  volumeInfo: {
+    title: string;
+    subtitle: string;
+    authors: string[];
+    description: string;
+    imageLinks: {
+      thumbnail: string;
+    };
+    infoLink: string;
+  };
+}
 
 function App() {
-  const [modalOpen, setModalOpen] = useState<any>(false);
-  const [search, setSearch] = useState<any>("");
-  const [books, setBooks] = useState<any>([]);
-  const [allbooks, setAllBooks] = useState<any>([]);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [search, setSearch] = useState<string>("");
+  const [books, setBooks] = useState<Book[]>([]);
+  const [allbooks, setAllBooks] = useState<Book[]>([]);
   const [filtredBooks, setFiltredBooks] = useState<any>([]);
   const [activeCard, setactiveCard] = useState<any>([]);
   const [category, setCategory] = useState<any>([]);
@@ -42,16 +54,17 @@ function App() {
     }
   }
   function setFilters() {
-    setBooks(allbooks);
-
     if (filtredBooks !== "N/A") {
-      const newBooks = books.filter(
+      const newBooks = allbooks.filter(
         (val: any) => val.volumeInfo.categories == filtredBooks
       );
       setBooks(newBooks);
     } else {
       setBooks(allbooks);
     }
+  }
+  function resetFilter() {
+    setBooks(allbooks);
   }
 
   function openModal() {
@@ -69,6 +82,7 @@ function App() {
         handleModalOpen={openModal}
         setactiveCard={setactiveCard}
         categories={category}
+        reset={resetFilter}
       />
 
       <InfoModal

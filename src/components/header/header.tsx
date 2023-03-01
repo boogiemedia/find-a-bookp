@@ -9,7 +9,7 @@ import LoadingButton from "@mui/lab/LoadingButton";
 
 //...........End of imports...................................................
 interface props {
-  text: any;
+  text: (value: string) => void;
   handleApi: any;
 }
 //..................End of  props...............................................
@@ -83,12 +83,7 @@ export default function Header({ text, handleApi }: props) {
             placeholder="Search…"
             inputProps={{ "aria-label": "search" }}
           />
-          <LoadingButton
-            size="large"
-            onClick={handleClick}
-            loadingPosition="end"
-            variant="contained"
-          >
+          <LoadingButton size="large" onClick={handleClick} variant="contained">
             <span>Find</span>
           </LoadingButton>
         </Search>

@@ -10,6 +10,7 @@ interface props {
   handleModalOpen: any;
   setactiveCard: any;
   categories: any;
+  reset: any;
 }
 //.....................End of props..........................................
 
@@ -19,13 +20,14 @@ export default function Main({
   handleFilter,
   handleModalOpen,
   setactiveCard,
+  reset,
 
   categories,
 }: props) {
   return (
     <>
       <ToolBar
-        data={bookList}
+        reset={reset}
         filtredBooks={filtredList}
         handleFilter={handleFilter}
         categories={categories}

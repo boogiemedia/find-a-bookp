@@ -9,7 +9,7 @@ import Button from "@mui/material/Button";
 
 //..................End of imports.........................................
 interface props {
-  data: any;
+  reset: any;
   filtredBooks: any;
   handleFilter: any;
   categories: any;
@@ -17,7 +17,7 @@ interface props {
 //........................end of props...............................
 
 export default function ToolBar({
-  data,
+  reset,
   filtredBooks,
   handleFilter,
   categories,
@@ -27,8 +27,12 @@ export default function ToolBar({
     setCategory(event.target.value);
     filtredBooks(event.target.value);
   };
-  console.log(category, "check");
   //...................................End of constants..................................
+  function handleReset() {
+    reset();
+    setCategory("N/A");
+  }
+
   const BootstrapInput = styled(InputBase)(({ theme }) => ({
     "label + &": {
       marginTop: theme.spacing(3),
@@ -77,7 +81,7 @@ export default function ToolBar({
       >
         filter
       </Button>
-      <Button variant="contained" size="medium">
+      <Button onClick={handleReset} variant="contained" size="medium">
         reset
       </Button>
     </Toolbar>

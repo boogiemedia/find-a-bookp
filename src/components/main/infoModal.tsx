@@ -6,14 +6,12 @@ import Fade from "@mui/material/Fade";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { url } from "inspector";
 //............End of imports.......................
 interface props {
-  setOpen: any;
-  isOpen: any;
+  setOpen: (value: boolean) => void;
+  isOpen: boolean;
   activeCard: any;
 }
 //...................end of props....................

@@ -19,25 +19,38 @@ export default function Book({ data, handleModalOpen, setactiveCard }: props) {
   return (
     <Card
       sx={{
-        width: "15vw",
+        minWidth: "350px",
+        minHeight: "550px",
+        width: "18vw",
         margin: "0px 20px 20px 0px",
         height: "30vw",
       }}
     >
       <CardActionArea onClick={cardClick}>
         <CardMedia
-          sx={{ paddingTop: "15px" }}
+          sx={{ paddingTop: "15px", objectFit: "cover" }}
           component="img"
-          height="50%"
+          height="400"
           image={
             info.imageLinks?.thumbnail === undefined
               ? "https://toppng.com/uploads/preview/small-book-cover-template-11550246173rolkzaboiy.png"
               : info.imageLinks.thumbnail
           }
-          alt="green iguana"
+          alt={info.title}
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography
+            sx={{
+              display: "block",
+              whiteSpace: "nowrap",
+              width: "15em",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+            gutterBottom
+            variant="h5"
+            component="div"
+          >
             {info.title}
           </Typography>
           <Typography variant="body2" color="text.secondary">
